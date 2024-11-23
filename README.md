@@ -1,4 +1,6 @@
-This project focuses on the analysis and prediction of Tesla stock market data. By utilizing historical stock data, it aims to uncover insights into Tesla's price movements, risks, and future behavior. The analysis combines Exploratory Data Analysis (EDA), data visualization, and predictive modeling techniques.
+This project delves into the analysis and prediction of Tesla's stock market performance. By leveraging historical stock data, the goal is to gain insights into Tesla's price movements, volatility, and potential future behavior. The analysis integrates Exploratory Data Analysis (EDA), data visualization, and predictive modeling techniques.
+
+
 
 Key Questions Addressed:
 * How has Tesla's stock price changed over time?
@@ -46,13 +48,13 @@ The graph below shows the distribution of daily returns:
 Using the Monte Carlo to run many trials with random market conditions, then we'll calculate portfolio losses for each trial. After this, we'll use the aggregation of all these simulations to establish how risky the stock is.
 
 Let's start with a brief explanation of what we're going to do:
-
-Firstly, for specifying a model, We will use the geometric Brownian motion (GBM), which is technically known as a Markov process. This means that the stock price follows a random walk and is consistent with (at the very least) the weak form of the efficient market hypothesis (EMH) - past price information is already incorporated and the next price movement is "conditionally independent" of past price movements.
+Stock prices follow a Markov process (random walk) consistent with the weak form of the Efficient Market Hypothesis (EMH), where future prices are independent of past movements.
+This means that the stock price follows a random walk and is consistent with (at the very least) the weak form of the efficient market hypothesis (EMH) - past price information is already incorporated and the next price movement is "conditionally independent" of past price movements.
 
 This means that the past information on the price of a stock is independent of where the stock price will be in the future, basically meaning, you can't perfectly predict the future solely based on the previous price of a stock.
 
 The equation for geometric Browninan motion is given by the following equation: GBM Equation
-
+dS=μSdt+σSdϵ
 Where, S is the stock price, μ
  is the expected return (which we calculated earlier), σ
  is the standard deviation of the returns, t is time, and ϵ
