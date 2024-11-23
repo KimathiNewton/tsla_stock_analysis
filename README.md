@@ -18,4 +18,4 @@ The dataset is feteched from yfinance library. The columns include:
 
 We first look at the total volume of stock being traded each day over the years
 
-![dashboard](Images/volume.jpg)
+![dashboard](Images/volume.png)
