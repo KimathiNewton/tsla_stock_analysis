@@ -19,21 +19,24 @@ The dataset is feteched from yfinance library. The columns include:
 We first look at the total volume of stock being traded each day over the years
 
 ![dashboard](Images/volume.png)
+The volume fluctuates significantly over time, with periods of high volume followed by periods of low volume. This suggests that there are periods of high investor interest and trading activity, interspersed with periods of lower interest.
+Overall, there appears to be an increasing trend in volume over the years. This could indicate growing investor interest and market participation in Tesla stock.
 
 Now let look at the closing prices over the years:
 ![Closing prices](Images/closing.png)
+The chart shows the adjusted closing price of Tesla stock over time, starting from around 2010 to the present.
+As from the year 2020, closing price trend is strongly upward, indicating a significant increase in Tesla's stock price.
+
+
 
 We now look at the Growth distribution:
 ![Growth](Images/growth.png)
-
+The slightly positive mean suggests that Tesla's stock price has been trending upward over time. This could be due to the company's strong growth prospects, innovative products, and positive market sentiment.
+There is a wide range of daily growth rates indicates that Tesla's stock price is subject to significant fluctuations. This could be due to news events, product launches, earnings reports, and market-wide sentiment.
+The graph shows right-skewness which suggests that there is a higher likelihood of larger upward movements in Tesla's stock price compared to larger downward movements. This could be attractive to investors who are seeking high-growth potential.
 
 ## Risk Analysis
 There are many ways we can quantify risk, one of the most basic ways using the information we've gathered on daily percentage returns is by comparing the expected return with the standard deviation of the daily returns.
-## Value at Risk
-Let's go ahead and define a value at risk parameter for our stocks. We can treat value at risk as the amount of money we could expect to lose (aka putting at risk) for a given confidence interval. Theres several methods we can use for estimating a value at risk. Let's go ahead and see some of them in action.
-
-### Value at risk using the "bootstrap" method
-For this method we will calculate the empirical quantiles from a histogram of daily returns.
 
 The graph below shows the distribution of daily returns:
 ![Returns](Images/daily_returns.png)
@@ -66,3 +69,12 @@ For more info on the Monte Carlo method for stocks, check out the following link
 Secondly, to demonstrate a basic Monte Carlo method, we will start with just a few simulations. First we'll define the variables we'll be using.
 
 ![Monte Carlo Simulation](Images/monte.png)
+
+We create a histogram of the end results for a much larger run.
+
+![Histogram for the simulation](Images/hist.png)
+
+The histogram shows the distribution of final stock prices after 365 days across all simulation runs. The prices are mostly clustered between 1.05 and 1.25, with a peak around 1.15–1.20. This suggests that the stock has a high probability of remaining close to its starting price, with some potential upside (beyond 1.25) and a small chance of downside (below 1.05).
+Now we have looked at the 1% empirical quantile of the final price distribution to estimate the Value at Risk for the Google stock, which looks to be 0.09 dollar for every investment of 1.19 dollar (the price of one inital Tesla stock).
+
+This means for every initial stock you purchase, you are putting about $ 0.09 at risk 99% of the time from our Monte Carlo Simulation.
