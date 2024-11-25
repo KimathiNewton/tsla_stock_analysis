@@ -21,14 +21,23 @@ The dataset is feteched from yfinance library. The columns include:
 We first look at the total volume of stock being traded each day over the years
 
 ![dashboard](Images/volume.png)
-The volume fluctuates significantly over time, with periods of high volume followed by periods of low volume. This suggests that there are periods of high investor interest and trading activity, interspersed with periods of lower interest.
-Overall, there appears to be an increasing trend in volume over the years. This could indicate growing investor interest and market participation in Tesla stock.
+There are noticeable spikes in trading activity, especially around 2020, possibly due to significant market events like Tesla's inclusion in the S&P 500 or stock splits.
+Around 2010-2013 the Trading volume was relatively low, reflecting Tesla's initial years as a publicly traded company when it was less known.
+ In 2013-2019 there is a Gradual increases in volume likely correspond to Tesla gaining traction as a major player in the automotive and tech industries.
 
 Now let look at the closing prices over the years:
 ![Closing prices](Images/closing.png)
-The chart shows the adjusted closing price of Tesla stock over time, starting from around 2010 to the present.
-As from the year 2020, closing price trend is strongly upward, indicating a significant increase in Tesla's stock price.
+The chart shows the adjusted closing price of Tesla stock over time, starting from around 2010 .
+For nearly a decade, Tesla's stock price showed relatively modest growth. This phase reflects Tesla's early-stage operations and the challenges of scaling an electric vehicle (EV) business. The adjusted closing prices started to increase as from 2020
+Now, Let take a look at the closing prices as from 2020:
+![Closing prices](Images/closingfrom2020.png)
+From the graph, we cans wee that from 2020, Tesla's adjusted closing prices started to increase. This likely due to:
+* Increasing EV adoption.
+* Tesla's profitability milestones (e.g., multiple quarters of profit).
+* Inclusion in the S&P 500 Index.
+The sharp increase suggests significant speculative interest.
 
+Also, there is a High Volatility as from 2022-2024.After reaching peak values, the stock experienced periods of sharp declines and recoveries. 
 
 
 We now look at the Growth distribution:
