@@ -45,11 +45,32 @@ Now, Let take  a closer look at the closing prices in 2024:
 In 2024, the prices started by declining, at around July they started to increase, but then the trend declined again for about 3 months. In November, the prices started to increase which is the month elections were held.
 
 
-We now look at the Growth distribution:
+We now look at the the distribution of Tesla's daily growth rates, calculated as the ratio of the adjusted close price for one day to the previous day (Adj Close[t] / Adj Close[t-1]). Here's a histogram displating the distribution:
 ![Growth](Images/growth.png)
-The slightly positive mean suggests that Tesla's stock price has been trending upward over time. This could be due to the company's strong growth prospects, innovative products, and positive market sentiment.
-There is a wide range of daily growth rates indicates that Tesla's stock price is subject to significant fluctuations. This could be due to news events, product launches, earnings reports, and market-wide sentiment.
-The graph shows right-skewness which suggests that there is a higher likelihood of larger upward movements in Tesla's stock price compared to larger downward movements. This could be attractive to investors who are seeking high-growth potential.
+* Most daily growth rates cluster tightly around 1.0, meaning Tesla's stock price typically experiences small day-to-day changes.This is common for stocks, where large daily price swings are relatively rare under normal market conditions.
+* The majority of daily growth rates fall within the range of 0.9 to 1.1 (±10%), highlighting that Tesla's stock rarely moves drastically in a single day.
+* There are occasional extreme growth rates (<0.8 or >1.2), indicating significant price changes, likely caused by major events such as earnings announcements, news, or market-wide movements.
+* This analysis show that Tesla's daily price changes are generally stable, with occasional significant fluctuations. The histogram effectively summarizes Tesla's historical volatility and provides insights into its day-to-day behavior. Would you like help interpreting the 30-day growth or applying this for predictive modeling?
+
+Now let look at whether the stock price is expected to increase (labeled as 1) or decrease (labeled as 0) compared to the current day's price.
+
+![Growth](Images/percentagegrowth.png)
+
+The histogram shows that:
+* The stock's price increased in 51.7% of the days (positive future growth).
+* The stock's price decreased in 48.3% of the days (negative future growth).
+
+The percentage of days with positive growth slightly exceeds those with negative growth. This suggests that, historically, Tesla's stock price is marginally more likely to increase on any given day.
+The near-equal distribution implies that Tesla's stock exhibits short-term volatility with no strong skew towards consistent gains or losses over a single day.
+
+
+
+
+
+
+
+
+
 
 ## Risk Analysis
 There are many ways we can quantify risk, one of the most basic ways using the information we've gathered on daily percentage returns is by comparing the expected return with the standard deviation of the daily returns.
