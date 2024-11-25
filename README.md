@@ -1,10 +1,6 @@
-This project delves into the analysis and prediction of Tesla's stock market performance. By leveraging historical stock data, the goal is to gain insights into Tesla's price movements, volatility, and potential future behavior. The analysis integrates Exploratory Data Analysis (EDA), data visualization, and predictive modeling techniques.
+## Tesla Stock Analysis
+This project explores the historical performance and trends of Tesla (TSLA) stock using data retrieved from Yahoo Finance. It includes a range of visualizations, statistical analyses, feature engineering to understand Tesla's stock behavior over time and price prediction using Monte Carlo Simulation. The analysis provides insights into price movements, daily growth rates, and the likelihood of future price changes.
 
-
-
-Key Questions Addressed:
-* How has Tesla's stock price changed over time?
-* What are the average daily returns, and how volatile are they?
 
 ## DataSet
 The dataset is feteched from yfinance library. The columns include:
