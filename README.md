@@ -37,7 +37,12 @@ From the graph, we cans wee that from 2020, Tesla's adjusted closing prices star
 * Inclusion in the S&P 500 Index.
 The sharp increase suggests significant speculative interest.
 
-Also, there is a High Volatility as from 2022-2024.After reaching peak values, the stock experienced periods of sharp declines and recoveries. 
+Also, there is a High Volatility as from 2022-2024.After reaching peak values, the stock experienced periods of sharp declines and recoveries.
+
+Now, Let take  a closer look at the closing prices in 2024:
+![Closing prices](Images/Closing2024.png)
+
+In 2024, the prices started by declining, at around July they started to increase, but then the trend declined again for about 3 months. In November, the prices started to increase which is the month elections were held.
 
 
 We now look at the Growth distribution:
