@@ -64,25 +64,20 @@ The percentage of days with positive growth slightly exceeds those with negative
 The near-equal distribution implies that Tesla's stock exhibits short-term volatility with no strong skew towards consistent gains or losses over a single day.
 
 
-
-
-
-
-
-
-
-
 ## Risk Analysis
-There are many ways we can quantify risk, one of the most basic ways using the information we've gathered on daily percentage returns is by comparing the expected return with the standard deviation of the daily returns.
+We will quantify risk using daily percentage returns by comparing the expected return with the standard deviation of the daily returns.
+We defined a value at risk parameter for our stocks and then treat value at risk as the amount of money we could expect to lose (aka putting at risk) for a given confidence interval.WE will estimate the Value at risk using the "bootstrap" method. For this method we calculated the empirical quantiles from a histogram of daily returns.
 
 The graph below shows the distribution of daily returns:
 ![Returns](Images/daily_returns.png)
+WE then use quantile to get the risk value for the stock and found that the 0.05 empirical quantile of daily returns is at 1.688066792488098
+Whihc means that in 5% of the trading days, Tesla’s return was worse than or equal to 1.688%. If we have a 1 million dollar investment, our one-day 5% VaR is 1.688066792488098 * 1,000,000 = $16,880.67\
+on the worst 5% of days, we could lose $16,880.67 or more due to the daily volatility of Tesla's stock
 
 
 ## Value at Risk using the Monte Carlo method
-Using the Monte Carlo to run many trials with random market conditions, then we'll calculate portfolio losses for each trial. After this, we'll use the aggregation of all these simulations to establish how risky the stock is.
+We used Monte Carlo to run many trials with random market conditions, then calculated portfolio losses for each trial. After this, we used the aggregation of all these simulations to establish how risky the stock is.
 
-Let's start with a brief explanation of what we're going to do:
 Stock prices follow a Markov process (random walk) consistent with the weak form of the Efficient Market Hypothesis (EMH), where future prices are independent of past movements.
 This means that the stock price follows a random walk and is consistent with (at the very least) the weak form of the efficient market hypothesis (EMH) - past price information is already incorporated and the next price movement is "conditionally independent" of past price movements.
 
@@ -90,18 +85,11 @@ This means that the past information on the price of a stock is independent of w
 
 The equation for geometric Browninan motion is given by the following equation: GBM Equation
 dS=μSdt+σSdϵ
-Where, S is the stock price, μ
- is the expected return (which we calculated earlier), σ
- is the standard deviation of the returns, t is time, and ϵ
- is the random variable.
+Where, S is the stock price, μ is the expected return (which we calculated earlier), σ is the standard deviation of the returns, t is time, and ϵ is the random variable.
+The change in the stock price is the current stock price multiplied by two terms. The first term is known as "drift", which is the average daily return multiplied by the change of time. The second term is known as "shock", for each time period the stock will "drift" and then experience a "shock" which will randomly push the stock price up or down. By simulating this series of steps of drift and shock thousands of times, we can begin to do a simulation of where we might expect the stock price to be. This is simply a way of scaling the standard deviation
 
-We can mulitply both sides by the stock price (S) to rearrange the formula and solve for the stock price. Now GBM Equation
 
-Now we see that the change in the stock price is the current stock price multiplied by two terms. The first term is known as "drift", which is the average daily return multiplied by the change of time. The second term is known as "shock", for each time period the stock will "drift" and then experience a "shock" which will randomly push the stock price up or down. By simulating this series of steps of drift and shock thousands of times, we can begin to do a simulation of where we might expect the stock price to be. This is simply a way of scaling the standard deviation.
-
-drift-shock
-
-For more info on the Monte Carlo method for stocks, check out the following link: How to use Monte Carlo simulation with GBM
+For more info on the Monte Carlo method for stocks, check out the following link: [How to use Monte Carlo simulation with GBM](https://www.investopedia.com/articles/07/montecarlo.asp)
 
 Secondly, to demonstrate a basic Monte Carlo method, we will start with just a few simulations. First we'll define the variables we'll be using.
 
@@ -111,7 +99,7 @@ We create a histogram of the end results for a much larger run.
 
 ![Histogram for the simulation](Images/hist.png)
 
-The histogram shows the distribution of final stock prices after 365 days across all simulation runs. The prices are mostly clustered between 1.05 and 1.25, with a peak around 1.15–1.20. This suggests that the stock has a high probability of remaining close to its starting price, with some potential upside (beyond 1.25) and a small chance of downside (below 1.05).
-Now we have looked at the 1% empirical quantile of the final price distribution to estimate the Value at Risk for the Google stock, which looks to be 0.09 dollar for every investment of 1.19 dollar (the price of one inital Tesla stock).
+The histogram shows the distribution of final stock prices across all simulation runs. The prices are mostly clustered between 1.05 and 1.25, with a peak around 1.15–1.20. This suggests that the stock has a high probability of remaining close to its starting price, with some potential upside (beyond 1.25) and a small chance of downside (below 1.05).
+Now we have looked at the 1% empirical quantile of the final price distribution to estimate the Value at Risk for the tesla stock, which looks to be 0.09 dollar for every investment of 1.19 dollar (the price of one inital Tesla stock).
 
 This means for every initial stock you purchase, you are putting about $ 0.09 at risk 99% of the time from our Monte Carlo Simulation.
